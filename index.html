@@ -1,18 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Booking Submitted</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Auto Detailing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body { background:#0b0b0b; color:white; font-family:Montserrat, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; text-align:center; }
-a { color:white; text-decoration:underline; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; scroll-behavior: smooth; }
+
+body { background:#0b0b0b; color:#fff; }
+
+/* HERO */
+.hero {
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1617814076449-bb4df7e8cfa0');
+  background-size:cover;
+  background-attachment: fixed;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.logo {
+  width:90px; height:90px;
+  border:2px solid white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700; font-size:32px;
+  margin-bottom:20px;
+}
+
+.hero h1 { font-size:3rem; font-weight:700; }
+.hero p { max-width:600px; margin:20px auto; font-size:1.1rem; opacity:.9; }
+
+.cta {
+  margin-top:25px;
+  padding:15px 35px;
+  background:white;
+  color:black;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:30px;
+  transition:.3s;
+}
+.cta:hover { background:#dcdcdc; }
+
+/* NAVIGATION */
+nav {
+  position:fixed; top:0; left:0; width:100%;
+  background:rgba(0,0,0,.7);
+  padding:15px 10%;
+  display:flex; justify-content:space-between; align-items:center;
+  z-index:100;
+}
+nav .logo-small { font-weight:700; font-size:24px; }
+nav a {
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s;
+}
+nav a:hover { color:#dcdcdc; }
+
+/* SECTIONS */
+section { padding:80px 10%; }
+.section-title { text-align:center; font-size:2.2rem; margin-bottom:50px; }
+
+/* SERVICES */
+.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.card { background:#141414; padding:35px; border-radius:15px; transition:.3s; cursor:pointer; }
+.card:hover { transform:translateY(-8px); box-shadow:0 0 25px rgba(255,255,255,.05); }
+.card h3 { margin-bottom:15px; }
+.card p { opacity:.85; line-height:1.6; }
+
+/* REVIEWS */
+.reviews { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
+.review { background:#141414; padding:30px; border-radius:15px; font-size:.95rem; transition:.3s; }
+.review:hover { transform:scale(1.02); box-shadow:0 0 20px rgba(255,255,255,.08); }
+.review span { display:block; margin-top:15px; font-weight:600; }
+
+/* CONTACT */
+.contact { text-align:center; }
+.contact p { opacity:.9; margin-bottom:20px; }
+
+/* FOOTER */
+footer { padding:30px; text-align:center; opacity:.6; font-size:.85rem; }
 </style>
 </head>
+
 <body>
-<div>
-  <h1>Booking Request Sent</h1>
-  <p>Thank you for choosing JD Auto Detailing.</p>
-  <p>We will contact you shortly.</p>
-  <a href="index.html">Return Home</a>
+
+<nav>
+  <div class="logo-small">JD</div>
+  <div>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="logo">JD</div>
+  <h1>Premium Auto Detailing</h1>
+  <p>Luxury-level car detailing that restores, protects, and elevates your vehicle inside and out.</p>
+  <a class="cta" href="confirmation.html">Book Your Detail</a>
 </div>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Full Detail</h3><p>Deep interior cleaning, exterior wash, wax, tire shine, and final inspection for showroom results.</p></div>
+    <div class="card"><h3>Interior Detail</h3><p>Seats, carpets, dashboard, vents, and odor removal to make your cabin feel brand new.</p></div>
+    <div class="card"><h3>Exterior Detail</h3><p>Hand wash, paint decontamination, wax protection, wheels, and tire dressing.</p></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2 class="section-title">Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review">“My car looked better than when I bought it. JD pays attention to every detail.”<span>— Alex M.</span></div>
+    <div class="review">“Professional, fast, and worth every dollar. Highly recommend.”<span>— Jordan T.</span></div>
+    <div class="review">“Interior was spotless and smelled amazing. I’m booking again.”<span>— Chris R.</span></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2 class="section-title">Get In Touch</h2>
+  <p>Phone: (401) 555-0198</p>
+  <p>Email: jdautodetailing@email.com</p>
+  <a class="cta" href="confirmation.html">Book Now</a>
+</section>
+
+<footer>
+  © 2026 JD Auto Detailing. All rights reserved.
+</footer>
+
+<script>
+// Optional smooth scroll with offset for fixed nav
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    const offset = 70; // nav height
+    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+  });
+});
+</script>
+
 </body>
 </html>
