@@ -1,103 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JD Detailing</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333; }
-    header { background:#111; color:#fff; padding:20px 0; text-align:center; }
-    header h1 { margin:0; font-size:2.5em; }
-    header p { margin:5px 0 0; font-size:1.2em; }
-    nav { display:flex; justify-content:center; gap:20px; background:#222; padding:10px 0; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    section { padding:50px 20px; max-width:1000px; margin:auto; background:#fff; margin-bottom:20px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-    h2 { text-align:center; margin-bottom:30px; }
-    .services { display:flex; flex-wrap:wrap; justify-content:space-around; gap:20px; }
-    .service { flex:1 1 250px; background:#eee; padding:20px; border-radius:8px; text-align:center; }
-    .service h3 { margin-top:0; }
-    footer { text-align:center; padding:20px; background:#111; color:#fff; }
-    img { max-width:100%; border-radius:8px; }
-    .contact-form input, .contact-form textarea { width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
-    .contact-form button { padding:10px 20px; background:#111; color:#fff; border:none; border-radius:5px; cursor:pointer; }
-    .contact-form button:hover { background:#333; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Detailing</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #111; color: #fff; }
+  header {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center;
+  }
+  header h1 { font-size: 4rem; letter-spacing: 3px; }
+  header p { font-size: 1.4rem; margin-top: 10px; }
+  nav { background: #000; padding: 15px; position: sticky; top:0; display: flex; justify-content: center; gap: 20px; }
+  nav a { color: #fff; text-decoration: none; font-size: 1.1rem; }
+  .section { padding: 60px 20px; }
+  .services { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .card {
+    background: #222; width: 280px; border-radius: 10px;
+    padding: 20px; text-align: center; transition: 0.3s;
+  }
+  .card:hover { transform: scale(1.05); background: #333; }
+  .card h3 { font-size: 1.6rem; margin-bottom: 10px;}
+  .card p { margin: 8px 0; }
+  .btn {
+    background: #e4b41a; color: #000; padding: 10px 20px;
+    border: none; cursor: pointer; border-radius: 5px;
+    font-size: 1rem; margin-top: 10px;
+  }
+  .gallery img { width: 100%; max-width: 300px; border-radius: 8px; margin: 10px;}
+  .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+  .contact-form button { background: #e4b41a; color: #000; padding: 10px; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>JD Detailing</h1>
-  <p>Premium interior and exterior car detailing services</p>
-</header>
-
 <nav>
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
   <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="home">
-  <h2>Welcome to JD Detailing</h2>
-  <img src="https://images.unsplash.com/photo-1606813901425-df70ff3d91e4?crop=entropy&cs=tinysrgb&fit=max&h=500&w=1000" alt="Car Detailing">
-  <p style="text-align:center; margin-top:20px;">Fast, reliable, and student-run with care for every detail.</p>
+<header>
+  <div>
+    <h1>JD Detailing</h1>
+    <p>Professional Auto Detailing & Protection</p>
+    <button class="btn" onclick="location.href='#services'">View Services</button>
+  </div>
+</header>
+
+<section id="about" class="section" style="background:#000;">
+  <h2 style="text-align:center; font-size:2.5rem;">About Us</h2>
+  <p style="max-width:800px; margin:auto; padding-top:20px; font-size:1.2rem;">
+    JD Detailing provides premium car cleaning and protection services inspired by top detailers. We treat every vehicle with precision and high quality care to keep it looking show‑ready. Your satisfaction is our priority.
+  </p>
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
+<section id="services" class="section">
+  <h2 style="text-align:center; font-size:2.5rem;">Our Services</h2>
   <div class="services">
-    <div class="service">
+    <div class="card">
       <h3>Full Detail</h3>
       <p>4 hrs 30 mins | $275</p>
-      <ul>
-        <li>Hand wash & wax</li>
-        <li>Interior deep clean & vacuum</li>
-        <li>Tire & wheel shine</li>
-      </ul>
+      <p>Hand wash, wax, interior deep clean, wheel shine.</p>
+      <button class="btn" onclick="location.href='#contact'">Book Now</button>
     </div>
-    <div class="service">
+    <div class="card">
       <h3>Interior Only</h3>
       <p>2 hrs 30 mins | $195</p>
-      <ul>
-        <li>Vacuum seats & carpets</li>
-        <li>Wipe down all surfaces</li>
-        <li>Clean windows inside</li>
-      </ul>
+      <p>Vacuum, wipe down, window clean.</p>
+      <button class="btn" onclick="location.href='#contact'">Book Now</button>
     </div>
-    <div class="service">
+    <div class="card">
       <h3>Exterior Only</h3>
       <p>2 hrs 30 mins | $165</p>
-      <ul>
-        <li>Hand wash & wax</li>
-        <li>Tire shine & trim cleaning</li>
-        <li>Remove dirt & grime from paint</li>
-      </ul>
+      <p>Hand wash, tire shine, paint detail.</p>
+      <button class="btn" onclick="location.href='#contact'">Book Now</button>
     </div>
   </div>
 </section>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>JD Detailing is a student-run car detailing business dedicated to making cars look their best. We started detailing because we love cars and providing quality care matters.</p>
-  <img src="https://images.unsplash.com/photo-1604152135912-04a6d0e72b9e?crop=entropy&cs=tinysrgb&fit=max&h=400&w=1000" alt="Detailing Work">
+<section id="gallery" class="section">
+  <h2 style="text-align:center; font-size:2.5rem;">Gallery</h2>
+  <div class="gallery" style="display:flex;flex-wrap:wrap;justify-content:center;">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?fit=crop&w=400&q=80" alt="Car 1">
+    <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f1a4?fit=crop&w=400&q=80" alt="Car 2">
+    <img src="https://images.unsplash.com/photo-1542317854-9f0af8b1cb94?fit=crop&w=400&q=80" alt="Car 3">
+  </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p style="text-align:center;">Book your service today! Call or email to schedule.</p>
-  <div class="contact-form">
+<section id="contact" class="section" style="background:#000;">
+  <h2 style="text-align:center; font-size:2.5rem;">Contact Us</h2>
+  <div class="contact-form" style="max-width:500px; margin:auto;">
     <input type="text" placeholder="Your Name">
     <input type="email" placeholder="Your Email">
     <textarea rows="4" placeholder="Your Message"></textarea>
-    <button>Send Message</button>
+    <button onclick="alert('Message sent!')" class="btn">Send Message</button>
   </div>
-  <p style="text-align:center; margin-top:20px;">Phone: (401) 123-1234 | Email: jd.details@example.com</p>
+  <p style="text-align:center; margin-top:20px;">Call: (401) 123‑1234 | Email: jd.details@example.com</p>
 </section>
-
-<footer>
-  &copy; 2026 JD Detailing. All rights reserved.
-</footer>
 
 </body>
 </html>
