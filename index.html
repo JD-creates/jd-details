@@ -1,261 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JD Auto Detailing</title>
+  <meta charset="UTF-8">
+  <title>JD Auto Detailing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  scroll-behavior: smooth;
-}
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
 
-body {
-  background: #000;
-  color: #fff;
-}
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
 
-/* NAV */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 50px;
-  z-index: 1000;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #111;
+      flex-wrap: wrap;
+    }
 
-.logo {
-  color: gold;
-  font-size: 26px;
-  font-weight: 700;
-}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
 
-nav a {
-  color: #fff;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 600;
-}
+    nav a:hover {
+      color: #aaa;
+    }
 
-nav a:hover {
-  color: gold;
-}
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.85)),
-    url("Image%2012.jpeg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
 
-.hero h1 {
-  font-size: 4rem;
-  color: gold;
-}
+    .hero {
+      background: url("Image%2016.jpeg") center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.hero p {
-  margin-top: 15px;
-  font-size: 1.2rem;
-}
+    .hero h2 {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      font-size: 2.5rem;
+    }
 
-.cta {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 15px 40px;
-  background: gold;
-  color: black;
-  font-weight: 700;
-  border-radius: 30px;
-  text-decoration: none;
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-/* SECTIONS */
-section {
-  padding: 100px 60px;
-}
+    .service {
+      background: #111;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
 
-.section-title {
-  text-align: center;
-  font-size: 2.8rem;
-  color: gold;
-  margin-bottom: 50px;
-}
+    .service img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
 
-/* SERVICES */
-.services {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    .service h3 {
+      margin-bottom: 10px;
+    }
 
-.service {
-  background: #111;
-  border: 2px solid gold;
-  border-radius: 15px;
-  width: 280px;
-  padding: 20px;
-  text-align: center;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
 
-.service img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
 
-.service h3 {
-  color: gold;
-  margin-bottom: 10px;
-}
+    .review {
+      background: #111;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-}
+    input, textarea, button {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
 
-/* REVIEWS */
-.review {
-  background: #111;
-  padding: 25px;
-  border-left: 4px solid gold;
-  max-width: 700px;
-  margin: 20px auto;
-}
+    button {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.review span {
-  display: block;
-  margin-top: 10px;
-  color: gold;
-  font-weight: 600;
-}
-
-/* FORM */
-form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, textarea {
-  padding: 12px;
-  background: #222;
-  border: none;
-  color: white;
-  border-radius: 6px;
-}
-
-button {
-  padding: 15px;
-  background: gold;
-  color: black;
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: gold;
-  background: #111;
-}
-</style>
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">JD Auto</div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#book">Book</a>
-  </nav>
+  <h1>JD Auto Detailing</h1>
 </header>
 
-<div class="hero">
-  <div>
-    <h1>JD Auto Detailing</h1>
-    <p>Luxury detailing for performance & exotic vehicles</p>
-    <a href="#book" class="cta">Book Now</a>
-  </div>
-</div>
+<nav>
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#values">Values</a>
+  <a href="#difference">Difference</a>
+  <a href="#budget">Budget</a>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#book">Book</a>
+</nav>
+
+<section class="hero">
+  <h2>Luxury Auto Detailing Done Right</h2>
+</section>
 
 <section id="services">
-  <h2 class="section-title">Our Services</h2>
+  <h2 class="section-title">Services</h2>
   <div class="services">
     <div class="service">
-      <img src="Image%2013.jpeg">
-      <h3>Exterior Detail</h3>
-      <p>Foam wash, polish, and protection.</p>
-    </div>
-    <div class="service">
-      <img src="Image%2026.jpeg">
-      <h3>Interior Detail</h3>
-      <p>Leather, carpets, and trim restored.</p>
+      <img src="Image%2017.jpeg">
+      <h3>Exterior Detailing</h3>
+      <p>Hand wash, wheel cleaning, and paint protection.</p>
     </div>
     <div class="service">
       <img src="Image%2018.jpeg">
-      <h3>Paint Enhancement</h3>
-      <p>Deep gloss and swirl removal.</p>
+      <h3>Interior Detailing</h3>
+      <p>Deep vacuum, leather treatment, and trim cleaning.</p>
     </div>
+    <div class="service">
+      <img src="Image%2019.jpeg">
+      <h3>Full Detail</h3>
+      <p>Complete interior and exterior restoration.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2 class="section-title">Service Pricing</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Basic Detail</h3>
+      <p>Exterior wash and light interior wipe.</p>
+      <p><strong>$99</strong></p>
+    </div>
+    <div class="service">
+      <h3>Interior Detail</h3>
+      <p>Vacuum, leather care, and full interior clean.</p>
+      <p><strong>$149</strong></p>
+    </div>
+    <div class="service">
+      <h3>Premium Detail</h3>
+      <p>Interior + exterior with paint enhancement.</p>
+      <p><strong>$249</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="values">
+  <h2 class="section-title">Core Values</h2>
+  <div class="services">
+    <div class="service">
+      <img src="Image%2020.jpeg">
+      <h3>Precision</h3>
+      <p>Attention to detail on every vehicle.</p>
+    </div>
+    <div class="service">
+      <img src="Image%2023.jpeg">
+      <h3>Trust</h3>
+      <p>Customers trust us with high-value cars.</p>
+    </div>
+    <div class="service">
+      <img src="Image%2025.jpeg">
+      <h3>Quality</h3>
+      <p>Only proper tools and products are used.</p>
+    </div>
+  </div>
+</section>
+
+<section id="difference">
+  <h2 class="section-title">What Makes Us Different</h2>
+  <div class="services">
+    <div class="service">
+      <img src="Image%2026.jpeg">
+      <h3>Luxury Focus</h3>
+      <p>Special care for premium vehicles.</p>
+    </div>
+    <div class="service">
+      <img src="Image%2018.jpeg">
+      <h3>Hands-On</h3>
+      <p>No rushed or outsourced work.</p>
+    </div>
+    <div class="service">
+      <img src="Image%2027.jpeg">
+      <h3>Detail Oriented</h3>
+      <p>We clean what others skip.</p>
+    </div>
+  </div>
+</section>
+
+<section id="budget">
+  <h2 class="section-title">Business Budget</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Overhead</h3>
+      <p>Utilities, storage, insurance.</p>
+    </div>
+    <div class="service">
+      <h3>Operating Costs</h3>
+      <p>Supplies, towels, wax, fuel.</p>
+    </div>
+    <div class="service">
+      <h3>Revenue</h3>
+      <p>Detail packages and repeat customers.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About the Owner</h2>
+  <div class="review">
+    JD Auto Detailing is independently owned and operated.
+    Every vehicle is serviced personally to ensure quality.
   </div>
 </section>
 
 <section id="gallery">
   <h2 class="section-title">Gallery</h2>
   <div class="gallery">
-    <img src="Image%2020.jpeg">
-    <img src="Image%2023.jpeg">
-    <img src="Image%2025.jpeg">
-    <img src="Image%2014.jpeg">
-    <img src="Image%2027.jpeg">
-    <img src="Image%2028.jpeg">
-    <img src="Image%2029.jpeg">
+    <img src="Image%2021.jpeg">
+    <img src="Image%2022.jpeg">
+    <img src="Image%2024.jpeg">
   </div>
 </section>
 
 <section id="reviews">
-  <h2 class="section-title">Client Reviews</h2>
-  <div class="review">“My car has never been this clean before. Unreal quality.” <span>— Danielson G.</span></div>
-  <div class="review">“Great price for such an amazing quality. Would recommand to anyone.” <span>— Jariana D.</span></div>
-  <div class="review">“The way they pay attention to the smallest details are top tier.” <span>— Michelle F.</span></div>
+  <h2 class="section-title">Customer Reviews</h2>
+  <div class="review">“Car looked brand new after the detail.”</div>
+  <div class="review">“Very professional and worth every dollar.”</div>
 </section>
 
 <section id="book">
-  <h2 class="section-title">Book Now</h2>
-  <form onsubmit="alert('Thank you! We will contact you shortly.'); return false;">
-    <input placeholder="Full Name" required>
+  <h2 class="section-title">Book a Service</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email" required>
-    <input placeholder="Car Make & Model" required>
-    <textarea placeholder="Extra details (optional)"></textarea>
-    <button>Submit</button>
+    <textarea rows="4" placeholder="Vehicle & Service Requested"></textarea>
+    <button type="submit">Submit Booking</button>
   </form>
 </section>
 
