@@ -20,14 +20,6 @@ header {
   text-align: center;
 }
 
-header h1 {
-  font-size: 48px;
-}
-
-header p {
-  font-size: 18px;
-}
-
 nav {
   background: #111;
   display: flex;
@@ -55,26 +47,20 @@ nav a {
 .hero h1 {
   background: rgba(0,0,0,0.75);
   padding: 35px;
-  font-size: 48px;
+  font-size: 42px;
   text-align: center;
 }
 
 section {
-  padding: 70px 20px;
+  padding: 80px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   letter-spacing: 2px;
-  font-size: 36px;
-}
-
-h3 {
-  font-size: 24px;
-  margin: 10px 0;
 }
 
 .grid {
@@ -88,8 +74,12 @@ h3 {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.1);
 }
 
 .card img {
@@ -98,26 +88,22 @@ h3 {
   margin-bottom: 15px;
 }
 
-.card img.fixed {
-  height: 200px;
-  object-fit: cover;
-}
-
-.card img.poster {
-  height: auto;
-  object-fit: cover;
-}
-
 .price {
   font-size: 22px;
   font-weight: bold;
+}
+
+.card p.microcopy {
+  font-size: 14px;
+  color: #e0a800;
+  margin-top: 5px;
 }
 
 footer {
   background: black;
   text-align: center;
   padding: 25px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 input, textarea {
@@ -125,25 +111,9 @@ input, textarea {
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
-  padding: 8px;
 }
 
-button, .book-button {
-  background:#e0a800;
-  color:black;
-  padding:14px 30px;
-  border:none;
-  border-radius:5px;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:10px;
-}
-
-button:hover, .book-button:hover {
+button:hover {
   opacity: 0.9;
 }
 </style>
@@ -175,26 +145,29 @@ button:hover, .book-button:hover {
 <h2>PRODUCTS & SERVICES</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%207.jpeg" class="fixed">
+    <img src="Image%207.jpeg" style="height:200px;object-fit:cover;">
     <h3>Exterior Detail</h3>
     <p>Full hand wash, wheels, tires, and paint shine.</p>
     <p class="price">$120</p>
+    <p class="microcopy">Book this detail now</p>
   </div>
   <div class="card">
-    <img src="Image%2026.jpeg" class="fixed">
+    <img src="Image%2026.jpeg" style="height:200px;object-fit:cover;">
     <h3>Interior Detail</h3>
     <p>Deep vacuum, wipe-down, leather & fabric care.</p>
     <p class="price">$140</p>
+    <p class="microcopy">Book this detail now</p>
   </div>
   <div class="card">
-    <img src="Image%2013.jpeg" class="fixed">
+    <img src="Image%2013.jpeg" style="height:200px;object-fit:cover;">
     <h3>Full Detail</h3>
     <p>Complete interior + exterior restoration.</p>
     <p class="price">$220</p>
+    <p class="microcopy">Book this detail now</p>
   </div>
 </div>
-<div style="text-align:center;margin-top:30px;">
-  <a href="#book" class="book-button">Book Now</a>
+<div style="text-align:center;margin-top:25px;">
+  <a href="#book" style="background:#e0a800;color:black;padding:12px 25px;border-radius:5px;text-decoration:none;font-weight:bold;">Book Now</a>
 </div>
 </section>
 
@@ -202,19 +175,19 @@ button:hover, .book-button:hover {
 <h2>CORE VALUES</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%2014.jpeg" class="fixed">
+    <img src="Image%2014.jpeg">
     <h3>Quality</h3>
-    <p>Every vehicle is treated with precision and care.</p>
+    <p>We treat every vehicle with care and precision, no shortcuts.</p>
   </div>
   <div class="card">
-    <img src="Image%2018.jpeg" class="fixed">
+    <img src="Image%2018.jpeg">
     <h3>Trust</h3>
-    <p>Customers know their car is in safe hands.</p>
+    <p>We earn your confidence by handling your car like it’s our own.</p>
   </div>
   <div class="card">
-    <img src="Image%2020.jpeg" class="fixed">
+    <img src="Image%2020.jpeg">
     <h3>Consistency</h3>
-    <p>Same high standard on every single job.</p>
+    <p>Every job, every time, same high standard.</p>
   </div>
 </div>
 </section>
@@ -223,16 +196,16 @@ button:hover, .book-button:hover {
 <h2>DIFFERENTIATION</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%2023.jpeg" class="fixed">
-    <p>Every car gets handled personally to make sure it’s done right.</p>
+    <img src="Image%2023.jpeg">
+    <p>Small business, hands-on owner—your car gets personal attention.</p>
   </div>
   <div class="card">
-    <img src="Image%2025.jpeg" class="fixed">
-    <p>Fair prices, full attention, no shortcuts.</p>
+    <img src="Image%2025.jpeg">
+    <p>Competitive pricing without cutting corners.</p>
   </div>
   <div class="card">
-    <img src="Image%208.jpeg" class="fixed">
-    <p>Focus on the little details that big shops often miss.</p>
+    <img src="Image%208.jpeg">
+    <p>More detailed care than big shops—you’ll notice the difference.</p>
   </div>
 </div>
 </section>
@@ -241,33 +214,36 @@ button:hover, .book-button:hover {
 <h2>BUDGET</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%2027.jpeg" class="fixed">
+    <img src="Image%2027.jpeg">
     <h3>Overhead Costs</h3>
-    <p>Supplies, tools, water, electricity kept low to save costs.</p>
+    <p>Cleaning supplies, equipment, water, electricity.</p>
   </div>
   <div class="card">
-    <img src="Image%2028.jpeg" class="fixed">
+    <img src="Image%2028.jpeg">
     <h3>Operating Costs</h3>
-    <p>Marketing, maintenance, and cleaning managed carefully to keep service solid.</p>
+    <p>Maintenance, marketing, cleaning materials.</p>
   </div>
   <div class="card">
-    <img src="Image%2029.jpeg" class="fixed">
+    <img src="Image%2029.jpeg">
     <h3>Revenue</h3>
-    <p>Detailing services and packages bring steady results while keeping customers satisfied.</p>
+    <p>Detailing services and premium packages.</p>
   </div>
 </div>
-<p style="max-width:800px;margin:30px auto;text-align:center;font-size:16px;">
-Low costs plus careful work keeps pricing fair and service consistent, so cars always get proper attention.
+<p style="max-width:800px;margin:40px auto;text-align:center;">
+JD Auto Detailing stays profitable thanks to low costs and high demand. 
+As a one-person operation, expenses stay low while quality stays high. 
+Our pricing keeps customers coming back and ensures steady growth.
 </p>
 </section>
 
 <section id="about">
 <h2>ABOUT US</h2>
 <div class="grid">
-  <div class="card">
-    <img src="Image%206.jpeg" class="poster">
+  <div class="card" style="padding:40px;">
+    <img src="Image%206.jpeg">
     <p>
-JD Auto Detailing was founded by a student entrepreneur with a passion for cars, cleanliness, and customer satisfaction. The business focuses on professional results, honest pricing, and consistent quality.
+JD Auto Detailing was started by a student who loves cars and clean rides. 
+We focus on honest pricing, professional results, and consistency.
     </p>
   </div>
 </div>
@@ -276,10 +252,10 @@ JD Auto Detailing was founded by a student entrepreneur with a passion for cars,
 <section id="employee">
 <h2>EMPLOYEE OF THE MONTH</h2>
 <div class="grid">
-  <div class="card">
-    <img src="IMG_9945.jpeg" class="poster">
+  <div class="card" style="padding:40px;">
+    <img src="IMG_9945.jpeg">
     <p>
-Every car handled personally—and yes, Employee of the Month every month.
+As the owner and lead detailer, he personally handles every car—and yes, he’s Employee of the Month every month.
     </p>
   </div>
 </div>
@@ -289,33 +265,35 @@ Every car handled personally—and yes, Employee of the Month every month.
 <h2>LOCATION</h2>
 <div class="grid">
   <div class="card">
-    <img src="Image%208.jpeg" class="fixed">
-    <p>Outside view of the space—built for professional car care.</p>
+    <img src="Image%208.jpeg">
+    <p>Outside view of the rented detailing space, built for high-quality car care.</p>
   </div>
   <div class="card">
-    <img src="Image%2013.jpeg" class="fixed">
-    <p>1550 Shinecrest Drive, Austin—where every car gets the attention it deserves.</p>
+    <img src="Image%2013.jpeg">
+    <p>1550 Shinecrest Drive, Austin. Where your car gets the attention it deserves.</p>
   </div>
 </div>
 </section>
 
+<!-- BOOKING FORM SECTION -->
 <section id="book">
 <h2>BOOK YOUR DETAIL</h2>
-<div style="max-width:600px;margin:auto;background:#141414;padding:30px;border-radius:10px;text-align:center;">
+<p style="text-align:center;margin-bottom:15px;">Fill out the form below and we'll get back to you within 24 hours.</p>
+<div style="max-width:600px;margin:auto;background:#141414;padding:25px;border-radius:10px;">
   <form id="bookingForm">
     <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" required style="width:100%;"><br>
+    <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin:5px 0;border-radius:5px;border:none;"><br>
     
     <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" required style="width:100%;"><br>
+    <input type="email" id="email" name="email" required style="width:100%;padding:10px;margin:5px 0;border-radius:5px;border:none;"><br>
     
     <label for="phone">Phone</label><br>
-    <input type="tel" id="phone" name="phone" required style="width:100%;"><br>
+    <input type="tel" id="phone" name="phone" required style="width:100%;padding:10px;margin:5px 0;border-radius:5px;border:none;"><br>
     
     <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="4" style="width:100%;"></textarea><br>
+    <textarea id="message" name="message" rows="4" style="width:100%;padding:10px;margin:5px 0;border-radius:5px;border:none;"></textarea><br>
     
-    <button type="submit">Submit</button>
+    <button type="submit" style="background:#e0a800;color:black;padding:12px 20px;border:none;border-radius:5px;font-weight:bold;margin-top:10px;cursor:pointer;">Submit</button>
   </form>
   <p id="formMessage" style="margin-top:15px;text-align:center;"></p>
 </div>
@@ -324,13 +302,13 @@ Every car handled personally—and yes, Employee of the Month every month.
 <script>
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
-  alert("Thank you! We'll get back to you shortly.");
+  document.getElementById('formMessage').innerText = "Thank you! We'll get back to you shortly.";
   this.reset();
 });
 </script>
 
 <footer>
-© 2026 JD Auto Detailing
+© 2026 JD Auto Detailing | Contact: info@jdautodetailing.com
 </footer>
 
 </body>
